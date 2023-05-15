@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+spec:
+  restartPolicy: Always
+  imagePullSecrets:
+    - name: srinu
+  containers:
+    - name: httpd-container
+      image: srini9666/httpd:v1
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8800
